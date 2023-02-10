@@ -1,2 +1,6 @@
 # photo-organizer
 This python file is organizing photos stored in a source folder and moving them to a target folder based on the date the photos were taken. The photos are organized into subdirectories based on the year and month the photos were taken.
+
+It uses the "exifread" library to extract the date and time the photos were taken from the photos' metadata. If the metadata is not available, the creation time is determined using the "os" library based on the access, modification, and creation timestamps of the photos.
+
+The program loops through all the files in the source folder, determines the creation time, year, and month for each photo, and creates a subdirectory for each year and month combination. If the subdirectory does not already exist, the program creates it. The photos are then moved to the subdirectory based on the year and month the photos were taken. If a photo with the same name already exists in the subdirectory, the program appends a number to the filename to make it unique.
